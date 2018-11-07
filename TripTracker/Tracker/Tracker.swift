@@ -44,12 +44,14 @@ class Tracker {
             locManager.pausesLocationUpdatesAutomatically = false
         }
         locationManager.startUpdatingLocation()
+        locationManager.startSignificantLocationChanges()
     }
     
     func endTrip() {
         isTracking = false
         tripBuilder?.endTrip()
         locationManager.stopUpdatingLocation()
+        locationManager.startSignificantLocationChanges()
         
         if let delegate = delegate,
            let trip = tripBuilder?.build() {
