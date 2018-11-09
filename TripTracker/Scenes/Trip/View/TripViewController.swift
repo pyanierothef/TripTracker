@@ -22,8 +22,14 @@ class TripViewController: UIViewController {
         super.viewDidLoad()
 
         presenter = TripController(tripView: self)
-        toggleTrackingButton.setTitle("Start", for: .normal)
-        toggleTrackingButton.backgroundColor = .green
+        if presenter.inTrip {
+            toggleTrackingButton.setTitle("Stop", for: .normal)
+            toggleTrackingButton.backgroundColor = .red
+        } else {
+            toggleTrackingButton.setTitle("Start", for: .normal)
+            toggleTrackingButton.backgroundColor = .green
+        }
+        
         
         mapView.delegate = self
         

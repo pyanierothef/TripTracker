@@ -1,41 +1,47 @@
 //
-//  TripObject.swift
+//  TripBuilderObject.swift
 //  TripTracker
 //
-//  Created by Pablo Yaniero on 11/6/18.
+//  Created by Pablo Yaniero on 11/8/18.
 //  Copyright © 2018 THEF. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class TripObject : Object {
+class TripBuilderObject : Object {
+    
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var startDate : Date = Date()
-    @objc dynamic var endDate : Date = Date()
     let waypoints = List<WaypointObject>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
 
-extension Trip: Persistable {
-    
-    init(managedObject: TripObject) {
+extension TripBuilder: Persistable {
+
+    convenience init(managedObject: TripBuilderObject) {
+        self.init()
+        self.id = managedObject.id
         self.startDate = managedObject.startDate
-        self.endDate = managedObject.endDate
         self.waypoints = managedObject.waypoints.map{Waypoint(managedObject:$0)}
     }
     
-    func managedObject() -> TripObject {
-        let trip = TripObject()
-        trip.startDate = self.startDate
-        trip.endDate = self.endDate
+    func managedObject() -> TripBuilderObject {
+        let trip = TripBuilderObject()
+        trip.id = self.id
+        trip.startDate = self.startDate ?? Date()
         trip.waypoints.append(objectsIn: self.waypoints.map{$0.managedObject()})
         
         return trip
     }
     
-   
+    
 }
 
-extension Trip {
+extension TripBuilder {
     public enum Query: QueryType {
         
         case atDate(Date)
@@ -44,7 +50,7 @@ extension Trip {
         public var predicate: NSPredicate? {
             switch self {
             case .atDate(let value):
-                return NSPredicate(format: "startDate < %@ && endDate > %@", argumentArray: [value, value])
+                return NSPredicate(format: "startDate == %@", argumentArray: [value])
             case .all:
                 return nil
             }

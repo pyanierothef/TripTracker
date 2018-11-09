@@ -19,4 +19,10 @@ class WriteTransaction {
     func add<T: Persistable>(_ value: T, update: Bool) {
         realm.add(value.managedObject(), update: update)
     }
+    
+    func remove<T: Persistable>(_ value: T, primaryKey: Any) {
+        if let object = realm.object(ofType: T.ManagedObject.self, forPrimaryKey: primaryKey) {
+            realm.delete(object)
+        }
+    }
 }

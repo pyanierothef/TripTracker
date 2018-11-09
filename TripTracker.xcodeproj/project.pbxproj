@@ -32,6 +32,7 @@
 		361B7DEE2193860A0050DC5F /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B7DED2193860A0050DC5F /* Waypoint.swift */; };
 		361B7DF02193860F0050DC5F /* WaypointObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B7DEF2193860F0050DC5F /* WaypointObject.swift */; };
 		361B7DF2219386140050DC5F /* WriteTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B7DF1219386140050DC5F /* WriteTransaction.swift */; };
+		361B7DF421947AAD0050DC5F /* TripBuilderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B7DF321947AAD0050DC5F /* TripBuilderObject.swift */; };
 		365A51022191BC8300EA9A2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365A51012191BC8300EA9A2A /* AppDelegate.swift */; };
 		365A51042191BC8300EA9A2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365A51032191BC8300EA9A2A /* ViewController.swift */; };
 		365A51072191BC8300EA9A2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365A51052191BC8300EA9A2A /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		361B7DED2193860A0050DC5F /* Waypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
 		361B7DEF2193860F0050DC5F /* WaypointObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointObject.swift; sourceTree = "<group>"; };
 		361B7DF1219386140050DC5F /* WriteTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTransaction.swift; sourceTree = "<group>"; };
+		361B7DF321947AAD0050DC5F /* TripBuilderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBuilderObject.swift; sourceTree = "<group>"; };
 		365A50FE2191BC8300EA9A2A /* TripTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		365A51012191BC8300EA9A2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		365A51032191BC8300EA9A2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				361B7DEF2193860F0050DC5F /* WaypointObject.swift */,
 				361B7DDD219385DD0050DC5F /* TripObject.swift */,
+				361B7DF321947AAD0050DC5F /* TripBuilderObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				361B7DBD2193853F0050DC5F /* Container.swift in Sources */,
 				361B7DF02193860F0050DC5F /* WaypointObject.swift in Sources */,
 				361B7DEE2193860A0050DC5F /* Waypoint.swift in Sources */,
+				361B7DF421947AAD0050DC5F /* TripBuilderObject.swift in Sources */,
 				365A51022191BC8300EA9A2A /* AppDelegate.swift in Sources */,
 				361B7DE2219385EC0050DC5F /* TripsController.swift in Sources */,
 				361B7DD4219385B80050DC5F /* TripController.swift in Sources */,

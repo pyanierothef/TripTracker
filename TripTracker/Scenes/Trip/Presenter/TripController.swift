@@ -18,6 +18,9 @@ class TripController : TripPresenter {
     init(tripView: TripView) {
         self.tripView = tripView
         tracker.delegate = self
+        if tracker.isTracking {
+            currentTrack = tracker.trackedLocations
+        }
     }
     
     var inTrip: Bool {

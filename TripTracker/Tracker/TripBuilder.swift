@@ -8,8 +8,9 @@
 
 import Foundation
 
-class TripBuilder {
+final class TripBuilder {
     
+    var id = UUID().uuidString
     var startDate : Date?
     var endDate : Date?
     var waypoints : [Waypoint] = []
